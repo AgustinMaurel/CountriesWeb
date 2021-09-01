@@ -1,0 +1,29 @@
+Front PI:
+
+4 views:
+1- Landing page con imagen de fondo y boton para ingresar a la home.
+
+2- Home :
+    Nav : inputs de busqueda
+    Main: se vera el listado de paises
+    Filtrados/ordenamiento 
+    Paginado (1era 9(paises) despues 10)
+
+3- CountryDetail:
+    Va a mostar todos los detalles del pais y sus actividades turisticas
+
+4- CreateActivitie: 
+    Va a mostrar un formulario con campos(Nombre, Dificultad, Duracion, Temporada)
+    Posibilidad de seleccionar/agregar varios paises en simultaneo.
+    Boton/Opcion para crear nueva actividad turistica
+
+Componentes:
+
+Navbar
+CountryCard(se va a renderizar en la home y en country detail con otras propiedades mas)
+Filtrados y ordenamiento
+footer
+CreateActivitie
+
+
+
