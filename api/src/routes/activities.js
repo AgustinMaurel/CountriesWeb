@@ -1,7 +1,9 @@
 const { Router } = require('express');
-const { addActivitie }= require('../controllers/activitiesCont')
+const { addActivitie, getActivities }= require('../controllers/activitiesCont')
 
 const router = Router();
+
+router.get('/', getActivities)
 
 router.post('/', addActivitie)
 

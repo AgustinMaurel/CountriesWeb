@@ -1,32 +1,38 @@
 const { Country, Activitie } = require('../db.js')
 const axios = require('axios')
-const { COUNTRIES_URL, COUNTRIES_NAME, COUNTRIES_ALPHA } = require('../../constants')
+const { COUNTRIES_ALPHA } = require('../../constants')
 const { Op } = require('sequelize')
 
 function getAllCountries(req, res, next) {
     const { name } = req.query
-    if (name) {
-        return Country.findOne({
-            where: { name: { [Op.substring]: `%${name}%` } },
-            attributes: { exclude: ['subregion', 'area', 'population', 'createdAt', 'updatedAt'] }
+    if (name && typeof name === 'string') {
+        return Country.findAll({
+            where: { name: { [Op.substring]: `${name}` } },
+            attributes: { exclude: ['subregion', 'area','createdAt', 'updatedAt'] }  
         })
             .then((country) => res.status(200).send(country))
             .catch((e) => next(e))
     }
 
     return Country.findAll({
-        attributes: { exclude: ['capital', 'subregion', 'area', 'population', 'createdAt', 'updatedAt'] }})
+        attributes: { exclude: ['capital', 'subregion', 'area', 'createdAt', 'updatedAt'] },
+        include:[{
+            model: Activitie,
+            as: "activities",
+            attributes: ["id", "name"]
+        }]
+    })
         .then((countries) => res.status(200).send(countries))
         .catch((e) => next(e))
 }
+
 
 async function getById(req, res, next) {
     const { id } = req.params;
     let dbCountry = await Country.findByPk(id, {
         include: [{
             model: Activitie,
-            as: "activities",
-            attributes: ["id", "name"]
+            as: "activities"
         }]
     })
     let apiCountry = await axios.get(COUNTRIES_ALPHA + id)
@@ -55,7 +61,8 @@ async function getById(req, res, next) {
 
 module.exports = {
     getAllCountries,
-    getById
+    getById,
+    
 }
 
 

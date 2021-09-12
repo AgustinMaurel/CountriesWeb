@@ -14,12 +14,15 @@ module.exports = (sequelize) => {
       autoIncrement : true
     },
     dificult:{
-      type: DataTypes.STRING
+      type: DataTypes.ENUM("1","2","3","4","5")
     },
     duration:{
       type:DataTypes.STRING
     },
     season:{
+      type: DataTypes.ENUM('Autumn','Winter','Spring','Summer')
+    },
+    image:{
       type: DataTypes.STRING
     }
   });

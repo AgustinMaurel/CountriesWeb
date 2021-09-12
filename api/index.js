@@ -15,7 +15,8 @@ conn.sync().then(async () => { // HACER VALIDACION PARA PRECARGAR DE PAISES EN D
         name: e.name,
         image: e.flag,
         continent: e.region,
-        id: e.alpha3Code
+        id: e.alpha3Code,
+        population: e.population
       }
     })
     await Country.bulkCreate(countriesApi)
