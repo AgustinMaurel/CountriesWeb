@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+
+.card{
+    grid-area: auto;
+    align-content: center;
+    justify-content: center;
+    width: min(400px, calc(70% + 180px));
+    height: min(280px, calc(70% + 180px));
+    border-radius: 9px;
+    font-family: 'Lobster', cursive;
+    text-decoration: none;
+    list-style: none;
+    color: black;
+    font-size: 18px;
+}
+
+.img{
+    margin:6px;
+    border-radius: 9px;
+    height: 225px;
+    width: min(360px, calc(70% + 180px));
+    object-fit: cover;
+    filter: sepia(20%);
+    transition: all 0.3s;
+}
+.img:hover{
+    transform: scale(1.2);
+}
+
+.countryLink{
+    text-decoration:none;
+    color: black;
+}
+
+
+.countryName{
+    cursor: pointer;
+}

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.containerCreate{
+    display: flex;
+    height: 87%;
+    width: 100%;
+    justify-content: center;
+    background-color: rgba(214, 194, 165, 0.466);
+    padding: 2em;
+    font-family: 'Lobster', cursive;
+    font-weight: 200;
+}
+.form{
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.containerForm{
+    background-color: rgba(112, 84, 42, 0.5);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align:  start;
+    padding: 4em;
+    width: 60%;
+    height: 80%;
+    border-radius: 9px;
+}
+
+.contImg{
+    text-align: end;
+    justify-content: end;
+    align-items: flex-end;
+    width: 50%;
+    height: 600px;
+    margin-right: 6em;
+    margin-top: 14px;
+
+}
+.contain2{
+    width: 50%;
+    height: 600px;
+}
+.containerForm div{
+    padding: 1em;
+    font-size: 20px;
+}
+
+.imgAct{
+    height:300px;
+    width: 400px;
+    object-fit: cover;
+    margin-left:7em ;
+}
+
+.formBtn{
+    text-align:center;
+    justify-content:end;
+    align-self: flex-end;
+    padding:1em; 
+    height: 3em;
+    margin-right: 7em;
+    bottom: 0;
+    width: 5em;
+    background: none;
+    cursor: pointer;
+    font-size: 1em;
+    border: 1px solid #341D17;
+    border-radius: 9px;
+    transition: all 0.3s;
+}
+.formBtn:hover{
+    color: #fff;
+    background-color: #341D17;
+}
+
+.btnFilter{
+    margin:1em;
+    padding:1em; 
+    background: none;
+    cursor: pointer;
+    font-size: 0.4em;
+    border: 1px solid #341D17;
+    border-radius: 9px;
+    transition: all 0.3s;
+}
+.btnFilter:hover{
+    color: #fff;
+    background-color: #341D17;
+}
+
+
+.containerForm div select{
+    width: 7em;
+    cursor: pointer;
+}
+.containerForm input{
+    background: inherit;
+    border: none;
+    border-bottom: 1px solid #341D17;
+    font-size: 20px;
+    outline: none;
+
+}
+
+.errors{
+    font-size: 13px;
+    color: rgb(148, 36, 36);
+}
+
+
+

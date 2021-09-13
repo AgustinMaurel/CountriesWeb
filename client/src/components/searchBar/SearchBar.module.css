@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.containerSearch{
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(214, 194, 165, 0.513);
+    color: #F2EADE;
+    font-family: 'Abril Fatface', cursive;
+    
+    
+}
+
+
+.searchInput{
+    width: 30%;
+    height: 2em;
+    border: 1px solid #341D17;
+    border-radius: 1em;
+    background-color: rgba(214, 194, 165, 0.924);
+    font-family: 'Lobster', cursive;
+    outline: none;
+    text-align: center;
+  
+
+}
+
+.searchBtn{
+    margin: 15px;
+    padding: px;
+    height: 2.2em;
+    width: 5em;
+    border: 1px solid rgba(214, 194, 165, 0.87);
+    border-radius: 1em;
+    cursor: pointer;
+    background-color :#341D17;
+    color: #F2EADE;
+    font-family: 'Lobster', cursive;
+    font-weight: 100;
+}

@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+.containerFilter{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(auto-fit,minmax(1em,1fr));
+    grid-auto-rows: min-content max-content auto;
+    font-family: 'Lobster', cursive;
+    background-color: rgba(214, 194, 165, 0.513);
+    color: black;
+    text-align: center;
+    
+   
+    
+}
+
+select{
+color: #F2EADE;
+margin:1em;
+font-size:1em;
+background-color: #341D17;
+border: solid 2px black;
+border-radius: 5%;
+width: 6em;
+font-family: 'Abril Fatface', cursive;
+font-weight: 200;
+}
+
+.contContinent{
+    grid-column: 2/2;
+    
+}
+
+
+.contActivitie{
+    grid-column: 3/3;
+}
+
+
+.contOrdAlph{
+    grid-column: 4/4;
+}
+
+
+.contOrdPop{
+    grid-column: 5/5;
+
+}

@@ -1,0 +1,35 @@
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(214, 194, 165, 0.513);
+}
+.containerPag{
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    list-style: none;
+    
+}
+
+.containerPag li {
+    background-color: #341D17;
+    padding: 10px;
+    margin: 3px;
+    border: 2px solid #F2EADE;
+    cursor:pointer;
+    border-radius: 5%;
+    color:#F2EADE;
+}
+
+
+.containerPag li.active {
+    background: #F2EADE;
+    color: #341D17;
+}
+.btn{
+    border: none;
+    color:#F2EADE;
+    background-color: inherit;
+}

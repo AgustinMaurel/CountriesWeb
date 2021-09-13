@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.cardsContainer{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-content: center;;
+    background-color: rgba(214, 194, 165, 0.513);
+    height: 69vh;
+    width: 100%;
+   
+}
+
+.notFound{
+    font-family: 'Lobster', cursive;
+    font-size: 30px;
+}
+
+.containGallery{
+    background: rgba(146, 102, 36, 0.445);
+    border-radius: 15px;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 70%;
+    height: 100%;
+    display: grid;
+    grid-auto-rows: 18rem;
+    grid-auto-flow: row dense;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 30rem));
+    
+  
+}

@@ -1,0 +1,26 @@
+.containerCard{
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(146, 102, 36, 0.445);
+    border-radius: 15px;
+    text-align: center;
+    height: 90%;
+    width: 65%;
+    margin-top: 20px;
+    
+}
+
+.title{
+    font-size: 1.6em;
+}
+p{
+    padding: 4px;
+}
+
+.img{
+    align-self: center;
+    height: 100%;
+    width: 100%;
+    
+    border-radius: 15px;
+}

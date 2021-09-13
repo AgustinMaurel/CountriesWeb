@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+
+.containerAll{
+    font-family: 'Lobster', cursive;
+    height: 85vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color:rgba(214, 194, 165, 0.513);
+    
+}
+
+
+.containerCountry{
+    background-color:rgba(146, 102, 36, 0.445);
+    width: 40%;
+    height: 85vh;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+.nameCountry{
+    padding: 10px;
+    font-size: 3em;
+    font-weight: 500;
+}
+
+.capitalCountry{
+    padding: 10px;
+    font-size: 1.4em;
+    font-weight: 300;
+}
+.continentCountry{
+    padding: 10px;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+.subregionCountry{
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+.areaCountry{
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.popCountry{
+    padding-bottom: 30px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.codeCountry{
+    padding-top: 30px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+
+.containerAllAct{
+  display: grid;
+  justify-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: repeat(auto-fill, minmax(50%,1fr));
+  grid-auto-rows: 22rem;
+  text-align: center;
+  height: 85vh;
+  width: 50%;
+ 
+ 
+  
+  
+ 
+}
+
+
+.imgCountry{
+    justify-content: center;
+    text-align: center;
+    height: 40%;
+    width: 80%;
+    border-radius: 14px;
+    
+    
+}
