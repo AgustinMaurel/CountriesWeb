@@ -4,10 +4,11 @@ const { COUNTRIES_ALPHA } = require('../../constants')
 const { Op } = require('sequelize')
 
 function getAllCountries(req, res, next) {
-    const { name } = req.query
-    if (name && typeof name === 'string') {
+    let auxName = req.query.name ? req.query.name : null
+    if (auxName && typeof auxName === 'string') {
+        auxName = auxName.charAt(0).toUpperCase() + auxName.slice(1).toLowerCase()
         return Country.findAll({
-            where: { name: { [Op.substring]: `${name}` } },
+            where: { name: { [Op.substring]: `${auxName}` } },
             attributes: { exclude: ['subregion', 'area','createdAt', 'updatedAt'] }  
         })
             .then((country) => res.status(200).send(country))

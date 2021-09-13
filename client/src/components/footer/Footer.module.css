@@ -14,5 +14,12 @@
 
 .about{
     text-align: center;
-    padding: 20px;
+    text-decoration: none;
+    color:#F2EADE;
+}
+
+
+.containerAbout{
+    padding-top:15px;
+    
 }
