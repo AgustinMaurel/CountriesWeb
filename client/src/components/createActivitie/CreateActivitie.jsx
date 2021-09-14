@@ -11,12 +11,9 @@ export default function CreateActivitie() {
 
     const countries = useSelector(state => state.countries)
 
-
     const dispatch = useDispatch()
 
     const [errors, setErrors] = useState({})
-
-
 
     const [activitie, setActivitie] = useState({
         name: "",
@@ -42,6 +39,7 @@ export default function CreateActivitie() {
         e.preventDefault()
         axios.post(ACTIVITIE_URL, activitie)
             .then((res) => dispatch(getActivities(res.data)))
+            .then(()=> alert("Activity add succesfull"))
             .then(() => setActivitie({
                 name: "",
                 dificult: 0,
@@ -83,16 +81,11 @@ export default function CreateActivitie() {
                             <label> Name </label>
                             <input required value={activitie.name} name='name' onChange={handleChange} />
                             {errors.name && (
-                                <p className={style.errors}>{errors.name}</p>
-                            )}
-
+                                <p className={style.errors}>{errors.name}</p>)}
                         </div>
                         <div className={style.formDifi}>
 
                             <label> Dificult </label>
-                            {/* <input required type="number" max="5" min="1" value={activitie.dificult} name='dificult' onChange={handleChange} /> */}
-
-
                             <label htmlFor="radio1"><input onChange={handleChange} id="radio1" type="radio" name="dificult" value="1" />★</label>
                             <input onChange={handleChange} id="radio2" type="radio" name="dificult" value="2" />
                             <label htmlFor="radio2">★</label>
@@ -105,8 +98,6 @@ export default function CreateActivitie() {
                             {errors.dificult && (
                                 <p className={style.errors}>{errors.dificult}</p>
                             )}
-
-
                         </div>
                         <div className={style.formDura}>
 
@@ -133,7 +124,7 @@ export default function CreateActivitie() {
                         <div className={style.formCountries}>
 
                             <label> Countries to add: </label>
-                            <select required onChange={handleSelect}>
+                            <select required onChange={handleSelect} name="nameCountry">
                                 {countries.map(e => {
                                     return (
                                         <option key={e.name}>{e.name}</option>
@@ -150,20 +141,16 @@ export default function CreateActivitie() {
                                     )
                                 })}
                             </ul>
-
                         </div>
                     </div>
                         <div className={style.contImg}>
-
-
                         <label>Image </label>
                         <input name='image' value={activitie.image} type="text" placeholder='url Image' onChange={handleChange} />
                         <div>
                             <img className={style.imgAct} src={activitie.image ? activitie.image : "not Found"} alt={activitie.image} />
                         </div>
                       </div>
-
-                    <button disabled={Object.values(errors).length ? true : false} className={style.formBtn} type="submit">  Add</button>
+                    <button disabled={Object.values(errors).length ? true : false} className={style.formBtn} type="submit"> Add</button>
                 </form>
             </div>
         </div>)

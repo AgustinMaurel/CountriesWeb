@@ -7,9 +7,10 @@ function getAllCountries(req, res, next) {
     let auxName = req.query.name ? req.query.name : null
     if (auxName && typeof auxName === 'string') {
         auxName = auxName.charAt(0).toUpperCase() + auxName.slice(1).toLowerCase()
+
         return Country.findAll({
             where: { name: { [Op.substring]: `${auxName}` } },
-            attributes: { exclude: ['subregion', 'area','createdAt', 'updatedAt'] }  
+            attributes: { exclude: ['subregion', 'area', 'createdAt', 'updatedAt'] }
         })
             .then((country) => res.status(200).send(country))
             .catch((e) => next(e))
@@ -17,7 +18,7 @@ function getAllCountries(req, res, next) {
 
     return Country.findAll({
         attributes: { exclude: ['capital', 'subregion', 'area', 'createdAt', 'updatedAt'] },
-        include:[{
+        include: [{
             model: Activitie,
             as: "activities",
             attributes: ["id", "name"]
@@ -28,19 +29,18 @@ function getAllCountries(req, res, next) {
 }
 
 
-async function getById(req, res, next) {
+
+function getById(req, res, next) {
     const { id } = req.params;
-    let dbCountry = await Country.findByPk(id, {
+    let dbCountry = Country.findByPk(id, {
         include: [{
             model: Activitie,
             as: "activities"
         }]
     })
-    let apiCountry = await axios.get(COUNTRIES_ALPHA + id)
+    let apiCountry = axios.get(COUNTRIES_ALPHA + id)
 
-    // REVEER PEDIDO A API Y DB Y PROMESAS
-
-    await Promise.all([dbCountry, apiCountry])
+    Promise.all([dbCountry, apiCountry])
 
         .then((result) => {
             var countryApi = {
@@ -52,7 +52,7 @@ async function getById(req, res, next) {
             const fullCountry = {
                 ...result[0].dataValues, // base de datos con ID, name, image, continent
                 ...countryApi            // piso los valores capital, subregion, area, population 
-                                         // con los datos de la api
+                // con los datos de la api
             }
             return res.json(fullCountry)
         })
@@ -60,10 +60,11 @@ async function getById(req, res, next) {
 }
 
 
+
 module.exports = {
     getAllCountries,
     getById,
-    
+
 }
 
 

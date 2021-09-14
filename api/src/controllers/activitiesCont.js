@@ -1,5 +1,5 @@
 const { Activitie, Country } = require('../db.js')
-const { Op } = require ('sequelize')
+
 
 async function getActivities(req, res, next){
     return Activitie.findAll()
@@ -7,14 +7,14 @@ async function getActivities(req, res, next){
     .catch((e)=>next(e))
 
 }
-async function addActivitie(req, res, next) {
+function addActivitie(req, res, next) {
     const { name, dificult, duration, season, image, nameCountry } = req.body
 
 if  (name && typeof name === 'string' &&
         dificult && !typeof dificult === 'number' ? Number(dificult): dificult &&
         duration && typeof duration === 'string' &&
         nameCountry.length && season){
-        let actCreated = await Activitie.create({
+        let actCreated = Activitie.create({
         name,
         dificult,
         duration,
@@ -23,19 +23,17 @@ if  (name && typeof name === 'string' &&
     })
     
 
-    let nameCountries = await Country.findAll({
+    let nameCountries = Country.findAll({
         where: {
             name : nameCountry
         },
         attributes: ['name', 'id']
     })
-
-             
-        return await Promise.all([actCreated,nameCountries])
+        return Promise.all([actCreated,nameCountries])
         .then((res) => res[0].addCountries(res[1]))
         .then((act) => res.status(200).send(act))
         .catch((e) => { next(e)})
-}
+ }
 }
 
 

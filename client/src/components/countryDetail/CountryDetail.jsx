@@ -60,9 +60,9 @@ return (
         </div>
         <div className={style.containerAllAct}>
         
-        {detail.activities ? detail.activities.map(e=>{
+        {detail.activities.length ? detail.activities.map(e=>{
             return <ActivitieCard name={e.name} key={e.id} image={e.image} dificult={e.dificult} id={e.id} season={e.season} duration={e.duration}/>
-        }):false}
+        }): <h3 className={style.noActivities}>This country has no activities</h3>}
         
         
         </div>

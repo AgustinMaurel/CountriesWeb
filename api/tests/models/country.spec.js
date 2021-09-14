@@ -20,6 +20,7 @@ describe('Country model', () => {
     });
   });
 });
+
 describe('Activitie model', () => {
   before(() => conn.authenticate()
     .catch((err) => {

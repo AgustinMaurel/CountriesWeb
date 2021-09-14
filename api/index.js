@@ -6,7 +6,7 @@ const axios = require('axios')
 const { PORT } = process.env
 // Syncing all the models at once.
 
-conn.sync().then(async () => { // HACER VALIDACION PARA PRECARGAR DE PAISES EN DB
+conn.sync().then(async () => { 
   let aux = await Country.findAll()
   if (aux.length === 0) {
     const apiCountries = await axios.get(COUNTRIES_URL)
@@ -22,7 +22,7 @@ conn.sync().then(async () => { // HACER VALIDACION PARA PRECARGAR DE PAISES EN D
     await Country.bulkCreate(countriesApi)
   } 
     server.listen(PORT, () => {
-      console.log(`%s listening at ${PORT}`); // eslint-disable-line no-console
+      console.log(`%s listening at ${PORT}`);
     })
   ;
 

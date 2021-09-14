@@ -12,6 +12,18 @@
     
 }
 
+.noActivities{
+    font-size: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    margin-top: 500px;
+    margin-left: 500px;
+    width: 100%;
+    font-weight: 300;
+}
 
 .containerCountry{
     background-color:rgba(146, 102, 36, 0.445);
@@ -87,7 +99,7 @@
 .imgCountry{
     justify-content: center;
     text-align: center;
-    height: 40%;
+    height: 50%;
     width: 80%;
     border-radius: 14px;
     
