@@ -24,6 +24,7 @@ export function getName(name) {
 
 }
 
+
 export function getFilter(filter) {
      return  {
           type: GET_FILTERCONT , payload: filter

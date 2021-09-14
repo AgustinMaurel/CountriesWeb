@@ -47,12 +47,12 @@ return (
         <h1 className={style.nameCountry}>{detail.name}</h1>
         <span className={style.capitalCountry}>Capital : {detail.capital}</span>
         <h2 className={style.continentCountry}>Continent : {detail.continent}</h2>
-        <span className={style.subregionCountry}>{detail.subRegion}</span>
+        <span className={style.subregionCountry}>Subregion : {detail.subRegion}</span>
         <br />
         <span className={style.areaCountry}>Area: {detail.area} km² </span>
         <br />
         <span className={style.popCountry}>Population: {detail.population}</span>
-        <img className={style.imgCountry} src={detail.image} alt="hola" />
+        <img className={style.imgCountry} src={detail.image} alt="not Found" />
         <span className={style.codeCountry}> Acronym: {detail.alphaCode}</span>
         </div>
         <div>

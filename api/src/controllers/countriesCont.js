@@ -32,6 +32,7 @@ function getAllCountries(req, res, next) {
 
 function getById(req, res, next) {
     const { id } = req.params;
+    
     let dbCountry = Country.findByPk(id, {
         include: [{
             model: Activitie,

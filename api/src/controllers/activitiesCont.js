@@ -37,10 +37,6 @@ if  (name && typeof name === 'string' &&
 }
 
 
-
-
-
-
 module.exports = {
     addActivitie,
     getActivities

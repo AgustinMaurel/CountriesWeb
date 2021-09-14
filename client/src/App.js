@@ -4,20 +4,14 @@ import { Route, Switch } from 'react-router-dom'
 import Country from './views/Country'
 import Activitie from './views/Activitie'
 import Home from './views/Home'
-import { useDispatch } from 'react-redux'
-import { useEffect } from 'react'
-import { getCountries } from './actions/index'
 import About from './components/about/About';
 
 function App() {
-  const dispatch = useDispatch()
-  useEffect(()=>{
-      dispatch(getCountries())
-  },[dispatch])
+  
   
   return (
     <div className="App">
-      <Switch>
+    
         <Route exact path='/' component={Landing}/>
 
         <Route exact path='/about' component={About}/>
@@ -28,7 +22,7 @@ function App() {
          
         <Route exact path='/Activitie' component={Activitie}/>
         
-      </Switch>
+      
     </div>
   );
 }

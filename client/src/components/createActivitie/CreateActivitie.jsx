@@ -5,9 +5,12 @@ import { useDispatch } from "react-redux"
 import { getActivities } from "../../actions"
 import { useSelector } from "react-redux"
 import { validate } from "../../utils/functions"
-import style from './createActivitie.module.css'
+import style from './createActivitie.module.css';
+import {useHistory} from 'react-router-dom'
 
 export default function CreateActivitie() {
+
+    const {push} = useHistory()    
 
     const countries = useSelector(state => state.countries)
 
@@ -38,16 +41,21 @@ export default function CreateActivitie() {
     function handleSubmit(e) {
         e.preventDefault()
         axios.post(ACTIVITIE_URL, activitie)
-            .then((res) => dispatch(getActivities(res.data)))
-            .then(()=> alert("Activity add succesfull"))
-            .then(() => setActivitie({
-                name: "",
-                dificult: 0,
-                duration: "",
-                season: "",
-                nameCountry: [],
-                image: ""
-            }))
+            .then((res) =>{
+                 dispatch(getActivities(res.data))
+                 alert("Activity add succesfull")
+                 setActivitie({
+                    name: "",
+                    dificult: 0,
+                    duration: "",
+                    season: "",
+                    nameCountry: [],
+                    image: ""
+                 })
+                 push('/home')
+            })
+           
+            
     }
 
     function handleSelect(e) {
@@ -84,7 +92,6 @@ export default function CreateActivitie() {
                                 <p className={style.errors}>{errors.name}</p>)}
                         </div>
                         <div className={style.formDifi}>
-
                             <label> Dificult </label>
                             <label htmlFor="radio1"><input onChange={handleChange} id="radio1" type="radio" name="dificult" value="1" />★</label>
                             <input onChange={handleChange} id="radio2" type="radio" name="dificult" value="2" />

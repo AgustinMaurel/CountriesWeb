@@ -1,4 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const { expect } = require('chai');
 var supertest = require('supertest')
 const app = require('../../src/app.js');
@@ -21,7 +20,7 @@ const activitie = {
   id: '1'
 }
 
-/* describe('Country routes', () => {
+describe('Country routes', () => {
   before(() => conn.authenticate()
   .catch((err) => {
     console.error('Unable to connect to the database:', err);
@@ -33,7 +32,7 @@ const activitie = {
       agent.get('/api/countries').expect(200)
     );
   });
-}); */
+});
 
 
 /* describe('Activities routes', () => {
@@ -49,9 +48,9 @@ const activitie = {
     );
   });
 }); */
-/* 
-describe('/activities',()=>{
-  it('POST agregar una nueva actividad y devuelve el nombre de la actividad agregada', async function() {
+
+/* describe('/activities',()=>{
+  it('POST agregar una nueva actividad', async function() {
       return supertest
       .post('/api/activities')
       .send(activitie)
