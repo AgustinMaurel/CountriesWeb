@@ -24,7 +24,7 @@ export default function About() {
                     <li>Css <SiCss3 /></li>
                 </ul>
 
-                <p> Cualquier feedback es bienvenido ! dejo mis datos de contacto : </p>
+                <p> Cualquier feedback es bienvenido !</p>
 
                 <ul className={style.contact}>
                     <li><a href="https://www.linkedin.com/in/agustin-maurel-1828ab213/"><SiLinkedin />  Linkedin </a></li>

@@ -1,5 +1,4 @@
 import axios from 'axios'
-
 import { COUNTRIES_URL, COUNTRIES_NAME, ACTIVITIE_URL } from "../utils/constants"
 import { ORDER_ALPH, GET_COUNTRIES, GET_NAME, GET_FILTERCONT, GET_ACTIVITIES, GET_FILTERACT } from "./types"
 

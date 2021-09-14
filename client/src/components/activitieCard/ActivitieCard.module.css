@@ -1,11 +1,12 @@
 .containerCard{
     display: flex;
     flex-direction: column;
+    align-self: center;
     background-color:rgba(146, 102, 36, 0.445);
     border-radius: 15px;
     text-align: center;
-    height: 90%;
-    width: 65%;
+    width: 300px;
+    height: 330px;
     margin-top: 20px;
     
 }
@@ -18,7 +19,7 @@ p{
 }
 
 .img{
-    align-self: center;
+
     height: 100%;
     width: 100%;
     

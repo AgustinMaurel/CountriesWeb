@@ -1,4 +1,3 @@
-//import navbar country detail footer
 import Navbar from "../components/navbar/Navbar";
 import CountryDetail from "../components/countryDetail/CountryDetail";
 import Footer from "../components/footer/Footer";

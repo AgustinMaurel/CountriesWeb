@@ -1,4 +1,3 @@
-// renderizar navbar filtros all cards y footer
 import Navbar from '../components/navbar/Navbar'
 import Allcards from '../components/allCards/AllCards'
 import Footer from '../components/footer/Footer'
