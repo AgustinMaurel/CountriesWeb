@@ -36,8 +36,6 @@ useEffect(()=>{
         population: res.data.population,
         activities: res.data.activities   
     }))
-    
-  
 })
 },[id])
 

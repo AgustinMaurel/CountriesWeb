@@ -6,7 +6,7 @@ const axios = require('axios')
 const { PORT } = process.env
 // Syncing all the models at once.
 
-conn.sync().then(async () => { 
+conn.sync({force: true}).then(async () => { 
   let aux = await Country.findAll()
   if (aux.length === 0) {
     const apiCountries = await axios.get(COUNTRIES_URL)

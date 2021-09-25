@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
-import { getActivities, getCountries, getFilter, getFilterAct, orderAlph } from "../../actions/index"
+import { getActivities, getCountries, getFilterCont, getFilterAct, order } from "../../actions/index"
 import style from './Filter.module.css'
 import { FaSortAlphaDownAlt, FaPlay } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
@@ -18,7 +18,7 @@ export default function Filters({ setCurrentPage, setOrder }) {
 
     function handleContinent(e) {
         e.preventDefault()
-        dispatch(getFilter(e.target.value))
+        dispatch(getFilterCont(e.target.value))
         setCurrentPage(1)
     }
 
@@ -31,14 +31,14 @@ export default function Filters({ setCurrentPage, setOrder }) {
 
     function handleOrder(e) {
         e.preventDefault()
-        dispatch(orderAlph(e.target.value))
+        dispatch(order(e.target.value))
         setCurrentPage(1)
         setOrder(e.target.value)
     }
 
     function handleOrderPop(e){
         e.preventDefault()
-        dispatch(orderAlph(e.target.value))
+        dispatch(order(e.target.value))
         setCurrentPage(1)
         setOrder(e.target.value)
     }

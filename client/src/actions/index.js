@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { COUNTRIES_URL, COUNTRIES_NAME, ACTIVITIE_URL } from "../utils/constants"
-import { ORDER_ALPH, GET_COUNTRIES, GET_NAME, GET_FILTERCONT, GET_ACTIVITIES, GET_FILTERACT } from "./types"
+import { ORDER, GET_COUNTRIES, GET_NAME, GET_FILTERCONT, GET_ACTIVITIES, GET_FILTERACT } from "./types"
 
 
 export function getCountries() {
@@ -21,11 +21,10 @@ export function getName(name) {
             })
             .catch(e => console.log(e))
     }
-
 }
 
 
-export function getFilter(filter) {
+export function getFilterCont(filter) {
      return  {
           type: GET_FILTERCONT , payload: filter
     }
@@ -47,9 +46,9 @@ export function getActivities(){
     }
 }
 
-export function orderAlph(payload){
+export function order(payload){
     return {
-        type: ORDER_ALPH,
+        type: ORDER,
         payload
     }
 }

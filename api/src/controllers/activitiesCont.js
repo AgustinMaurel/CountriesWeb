@@ -1,12 +1,13 @@
 const { Activitie, Country } = require('../db.js')
 
 
-async function getActivities(req, res, next){
+ function getActivities(req, res, next){
     return Activitie.findAll()
     .then((activities)=>res.json(activities))
     .catch((e)=>next(e))
 
 }
+
 function addActivitie(req, res, next) {
     const { name, dificult, duration, season, image, nameCountry } = req.body
 
@@ -14,6 +15,7 @@ if  (name && typeof name === 'string' &&
         dificult && !typeof dificult === 'number' ? Number(dificult): dificult &&
         duration && typeof duration === 'string' &&
         nameCountry.length && season){
+            
         let actCreated = Activitie.create({
         name,
         dificult,

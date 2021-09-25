@@ -82,6 +82,10 @@ export default function CreateActivitie() {
         <div className={style.containerCreate}>
             <br />
             <div className={style.containerForm}>
+                <div className={style.titleForm}>
+                <h2>New Activity</h2>
+                </div>
+                
                 <form className={style.form} onSubmit={handleSubmit}>
                     <div className={style.contain2}>
                         <div className={style.formName}>
@@ -109,7 +113,7 @@ export default function CreateActivitie() {
                         <div className={style.formDura}>
 
                             <label> Duration </label>
-                            <input required value={activitie.duration} name='duration' onChange={handleChange} />
+                            <input required placeholder="hours/days" value={activitie.duration} name='duration' onChange={handleChange} />
                             {errors.duration && (
                                 <p className={style.errors}>{errors.duration}</p>
                             )}
@@ -129,7 +133,7 @@ export default function CreateActivitie() {
 
                         </div>
                         <div className={style.formCountries}>
-
+                              <div className={style.countriesAdd}>
                             <label> Countries to add: </label>
                             <select required onChange={handleSelect} name="nameCountry">
                                 {countries.map(e => {
@@ -138,9 +142,13 @@ export default function CreateActivitie() {
                                     )
                                 })}
                             </select>
+                                  
+                                  </div>  
                             {errors.nameCountry && (
                                 <p className={style.errors}>{errors.nameCountry}</p>
                             )}
+                            <div className={style.countriesSelected}>
+
                             <ul>
                                 {activitie.nameCountry?.map((e, i) => {
                                     return (
@@ -148,16 +156,23 @@ export default function CreateActivitie() {
                                     )
                                 })}
                             </ul>
+
+                            </div>
                         </div>
                     </div>
                         <div className={style.contImg}>
                         <label>Image </label>
-                        <input name='image' value={activitie.image} type="text" placeholder='url Image' onChange={handleChange} />
+                        <input name='image' value={activitie.image} type="text" placeholder='url Image (optional)' onChange={handleChange} />
                         <div>
                             <img className={style.imgAct} src={activitie.image ? activitie.image : "not Found"} alt={activitie.image} />
+                            {activitie.image.length && errors.image ? (
+                                <p className={style.errors}>{errors.image}</p>): false}
                         </div>
                       </div>
-                    <button disabled={Object.values(errors).length ? true : false} className={style.formBtn} type="submit"> Add</button>
+                      <div className={style.containerBtn}>
+                    <button disabled={(Object.values(errors).length === 1 && errors.image) || !Object.values(errors).length ? false: true} className={style.formBtn} type="submit"> Add</button>
+
+                      </div>
                 </form>
             </div>
         </div>)

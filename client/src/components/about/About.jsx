@@ -11,16 +11,16 @@ export default function About() {
             <div className={style.containerCv}>
                 <h1 className={style.name}>Agustin Maurel</h1>
                 <p className={style.parraf}>Hola red ! Comparto mi primer proyecto personal
-                    dentro de henry, en el cual uni todos los conocimientos
+                    dentro de Henry, en el cual uni todos los conocimientos
                     aprendidos dentro del bootcamp utilizando las
                     siguientes tecnologias :
                 </p>
                 <ul className={style.tecsContainer}>
                     <li> JavaScript <SiJavascript /></li>
                     <li> ExpressJS <span className={style.express}>Express<SiJavascript /></span></li>
-                    <li> ReactJs <SiReact /></li>
+                    <li> ReactJS <SiReact /></li>
                     <li> Redux <SiRedux /></li>
-                    <li> Postgresql <SiPostgresql /></li>
+                    <li> PostgreSQL <SiPostgresql /></li>
                     <li>Css <SiCss3 /></li>
                 </ul>
 

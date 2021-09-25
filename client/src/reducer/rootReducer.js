@@ -1,4 +1,4 @@
-import { ORDER_ALPH, GET_COUNTRIES, GET_FILTERCONT, GET_NAME, GET_ACTIVITIES, GET_FILTERACT } from "../actions/types";
+import { ORDER, GET_COUNTRIES, GET_FILTERCONT, GET_NAME, GET_ACTIVITIES, GET_FILTERACT } from "../actions/types";
 import { filterActivities, sortPopUp, sortPopDown, sortAlphZA, sortAlphAZ } from "../utils/functions";
 
 const initialState = {
@@ -7,7 +7,6 @@ const initialState = {
     activities: []
 
 }
-
 
 export default function rootReducer(state = initialState, action) {
     switch (action.type) {
@@ -39,7 +38,7 @@ export default function rootReducer(state = initialState, action) {
                 ...state,
                 countriesFilter: action.payload === 'All'? auxAct : auxAct.filter(e => e.activities.length > 0).filter(e => filterActivities(e.activities, action.payload))
             }
-        case ORDER_ALPH:
+        case ORDER:
             let optionSort =
                 action.payload === 'A-Z' ? sortAlphAZ(state.countriesFilter)
                     : action.payload === 'Z-A' ? sortAlphZA(state.countriesFilter)
@@ -57,3 +56,28 @@ export default function rootReducer(state = initialState, action) {
         default: return state;
     }
 }
+
+
+
+ /*    switch (action.payload){
+                        case "A-Z" : 
+                        return {
+                            ...state,
+                            countriesFilter: sortAlphAZ(auxOrder)
+                        }
+                        case "Z-A" :
+                            return{
+                                ...state,
+                                countriesFilter: sortAlphZA(auxOrder)
+                            }
+                        case  "pop+" : 
+                        return {
+                            ...state,
+                            countriesFilter: sortPopUp(auxOrder)
+                        }
+                        case  "pop-" : 
+                        return {
+                            ...state,
+                            countriesFilter: sortPopDown(auxOrder)
+                        }        
+                    } */

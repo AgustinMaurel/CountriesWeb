@@ -22,9 +22,20 @@
     
 }
 
+.home{
+    display: flex;
+    font-size: 20px;
+    position: absolute;
+    margin-left: 400px;
+    margin-top: 60px;
+    text-decoration: none;
+    color:#f2eade ;
+}
+
 .linkHome{
     padding: 10px;
     font-size: clamp(1.1em, 2.3vw, 3em);
+    width: 200px;
     text-decoration: none;
     color: #f2eade;
     font-weight: 600;

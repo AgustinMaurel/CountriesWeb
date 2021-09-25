@@ -23,18 +23,19 @@
     height: 100%;
     text-align:  start;
     padding: 4em;
-    width: 60%;
-    height: 80%;
+    width: 50%;
+    height: 90%;
     border-radius: 9px;
+    box-shadow: 4px 4px 4px 1px#341D17;
 }
 
 .contImg{
-    text-align: end;
-    justify-content: end;
-    align-items: flex-end;
-    width: 50%;
-    height: 600px;
-    margin-right: 6em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 400px;
+    margin-right: 2em;
     margin-top: 14px;
 
 }
@@ -48,10 +49,21 @@
 }
 
 .imgAct{
+
+    align-self: center;
     height:300px;
     width: 400px;
     object-fit: cover;
     margin-left:7em ;
+}
+
+
+
+
+.titleForm{
+    text-align: center;
+    width: 10em;
+    margin-left: 0.9em;
 }
 
 .formBtn{
@@ -90,10 +102,16 @@
     background-color: #341D17;
 }
 
-
+.countriesAdd{
+    display: inline-flex;
+    text-align: center;
+    width: min-content;
+   left: 2em;
+}
 .containerForm div select{
     width: 7em;
     cursor: pointer;
+    height: 2em;
 }
 .containerForm input{
     background: inherit;
@@ -105,8 +123,27 @@
 }
 
 .errors{
-    font-size: 13px;
+    font-size: 15px;
     color: rgb(148, 36, 36);
+    width: 18em;
+    
+}
+
+.containerBtn{
+    display: flex;
+    position:absolute;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    margin-left: 24em;
+    margin-top: 34em;
+}
+
+
+.countriesSelected{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
 }
 
 

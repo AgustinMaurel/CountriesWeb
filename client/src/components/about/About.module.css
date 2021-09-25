@@ -44,7 +44,7 @@
      width: 100%;
      height: 81vh;
      background: url('../../Wallpapers/bgArg.png') no-repeat;
-     background-position: right;
+     background-position:40rem;
      background-size: contain;
      border-radius: 15px;
      margin: 70px;
@@ -67,6 +67,7 @@
 .img{
      width: 500px;
      border-radius: 9px;
+     margin-right: 100px;
 }
 .contact{
      display: flex;

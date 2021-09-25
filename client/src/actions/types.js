@@ -8,4 +8,4 @@ export const GET_ACTIVITIES = 'GET_ACTIVITIES'
 
 export const GET_FILTERACT = 'GET_FILTERACT'
 
-export const ORDER_ALPH = 'ORDER_ALPH'
+export const ORDER = 'ORDER'

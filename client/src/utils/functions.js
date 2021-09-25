@@ -49,6 +49,8 @@ export function sortAlphAZ(array){
 
 export function validate(activitie) {
     let errors = {}
+    let validateUrl = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-/]))?/;
+
     if (!activitie.name) {
         errors.name = 'Name is required'
     }
@@ -66,7 +68,8 @@ export function validate(activitie) {
     }
     if (!activitie.season) errors.season = 'Season is required'
     if (!activitie.nameCountry.length > 0) errors.nameCountry = 'Countries is required'
-
+    if (!validateUrl.test(activitie.image)) errors.image = "Insert a valid URL.";
+        
     return errors
 
 }

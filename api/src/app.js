@@ -19,7 +19,7 @@ server.use(setHeaders)
 
 server.use('/api', routes);
 
-// Error catching endware.
+
 server.use(errorHandler)
 
 module.exports = server;

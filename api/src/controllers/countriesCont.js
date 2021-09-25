@@ -4,7 +4,9 @@ const { COUNTRIES_ALPHA } = require('../../constants')
 const { Op } = require('sequelize')
 
 function getAllCountries(req, res, next) {
+    
     let auxName = req.query.name ? req.query.name : null
+    
     if (auxName && typeof auxName === 'string') {
         auxName = auxName.charAt(0).toUpperCase() + auxName.slice(1).toLowerCase()
 
@@ -31,6 +33,7 @@ function getAllCountries(req, res, next) {
 
 
 function getById(req, res, next) {
+    
     const { id } = req.params;
     
     let dbCountry = Country.findByPk(id, {
@@ -51,9 +54,9 @@ function getById(req, res, next) {
                 population: result[1].data.population
             }
             const fullCountry = {
-                ...result[0].dataValues, // base de datos con ID, name, image, continent
-                ...countryApi            // piso los valores capital, subregion, area, population 
-                // con los datos de la api
+                ...result[0].dataValues,
+                ...countryApi           
+                
             }
             return res.json(fullCountry)
         })
