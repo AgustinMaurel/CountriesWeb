@@ -7,16 +7,16 @@ export function filterActivities(array, value) {
 }
 
 
-export function sortPopUp (array){
+export function sortAreaUp (array){
     array.sort((a,b)=>{
-        return b.population - a.population
+        return b.area - a.area
     })
     return array
 }
 
-export function sortPopDown (array){
+export function sortAreaDown (array){
     array.sort((a,b)=>{
-        return a.population - b.population
+        return a.area - b.area
     })
     return array
 }

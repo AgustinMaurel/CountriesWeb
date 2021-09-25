@@ -1,6 +1,5 @@
 const { Country, Activitie } = require('../db.js')
 const axios = require('axios')
-const { COUNTRIES_ALPHA } = require('../../constants')
 const { Op } = require('sequelize')
 
 function getAllCountries(req, res, next) {
@@ -19,7 +18,7 @@ function getAllCountries(req, res, next) {
     }
 
     return Country.findAll({
-        attributes: { exclude: ['capital', 'subregion', 'area', 'createdAt', 'updatedAt'] },
+        attributes: { exclude: ['createdAt', 'updatedAt'] },
         include: [{
             model: Activitie,
             as: "activities",
@@ -30,35 +29,15 @@ function getAllCountries(req, res, next) {
         .catch((e) => next(e))
 }
 
-
-
 function getById(req, res, next) {
-    
     const { id } = req.params;
-    
-    let dbCountry = Country.findByPk(id, {
+    Country.findByPk(id, {
         include: [{
             model: Activitie,
             as: "activities"
         }]
-    })
-    let apiCountry = axios.get(COUNTRIES_ALPHA + id)
-
-    Promise.all([dbCountry, apiCountry])
-
-        .then((result) => {
-            var countryApi = {
-                capital: result[1].data.capital,
-                subregion: result[1].data.subregion,
-                area: result[1].data.area,
-                population: result[1].data.population
-            }
-            const fullCountry = {
-                ...result[0].dataValues,
-                ...countryApi           
-                
-            }
-            return res.json(fullCountry)
+    }) .then((result) => {
+           res.send(result)
         })
         .catch((e) => { next(e) })
 }

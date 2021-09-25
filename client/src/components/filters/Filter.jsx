@@ -2,8 +2,7 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getActivities, getCountries, getFilterCont, getFilterAct, order } from "../../actions/index"
 import style from './Filter.module.css'
-import { FaSortAlphaDownAlt, FaPlay } from "react-icons/fa";
-import { IoIosPeople } from "react-icons/io";
+import { FaSortAlphaDownAlt, FaPlay, FaChartArea } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
 
 export default function Filters({ setCurrentPage, setOrder }) {
@@ -75,11 +74,11 @@ export default function Filters({ setCurrentPage, setOrder }) {
             </select>
             </div>
             <div className={style.contOrdPop}>
-            <span> <IoIosPeople/> </span>
+            <span> <FaChartArea/> </span>
             <select className={style.select} onChange={handleOrderPop}>
                 <option value="All">All</option>
-                <option value="pop+">Order-pop +</option>
-                <option value="pop-">Order-pop -</option>
+                <option value="area+">Area +</option>
+                <option value="area-">Area -</option>
             </select>
             </div>
         </div>

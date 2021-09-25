@@ -24,6 +24,7 @@ const [detail, setDetail] = useState({
 useEffect(()=>{
     axios.get(COUNTRIES_URL+id)
 .then((res)=>{
+    console.log(res)
     setDetail((values)=>({
         ...values,
         name: res.data.name,
