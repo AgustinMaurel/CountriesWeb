@@ -7,6 +7,7 @@ return (
         <div className={style.containerCard}>
         <h3 className={style.title}>{name}</h3>
         <p>Dificult: {dificult}</p>
+        {console.log(name)}
         <p>Duration: {duration}</p>
         <p>Season: {season}</p>
         <img className={style.img} src={image} alt="Not Found" />

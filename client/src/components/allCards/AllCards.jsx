@@ -36,7 +36,7 @@ export default function AllCards() {
     
     const handlePrev =()=>{
         setCurrentPage(currentPage-1)
-
+        
         if((currentPage -1 )%pageLimit===0){
             setMaxPageNumber(maxPageNumber - pageLimit)
             setMinPageNumber(minPageNumber - pageLimit) 
